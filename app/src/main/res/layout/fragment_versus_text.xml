@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/grey_300"
+    android:id="@+id/linearcontainerradio"
+    android:padding="5dp">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/question_back"
+        android:id="@+id/radio_edittext"
+        android:padding="5dp"
+        android:hint="Enter Question Here" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter choices below"
+        android:layout_marginTop="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/question_back"
+        android:id="@+id/option1_edittext"
+        android:padding="5dp"
+        android:hint="Enter First option Here" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VS"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/question_back"
+        android:id="@+id/option2_edittext"
+        android:padding="5dp"
+        android:hint="Enter Second option Here" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="submit"
+        android:background="@drawable/button_backgraound"
+        android:id="@+id/radio_submit"
+        android:textColor="@color/colorWhite"
+        android:textSize="20dp"
+        android:padding="5dp"
+        android:layout_gravity="center">
+
+    </Button>
+
+</LinearLayout>

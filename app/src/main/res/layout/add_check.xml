@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/question_backgraound">
+
+       <CheckBox
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:enabled="false"/>
+        <EditText
+            android:id="@+id/inf_ed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:hint=" enter choice here"
+            android:focusedByDefault="false"
+            />
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/bross"
+            android:layout_gravity="right|center"
+            android:background="@drawable/ic_add_circle_outline_black_24dp"/>
+
+
+
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

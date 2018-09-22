@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_margin="10dp"
+    android:background="@drawable/question_backgraound"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/checkbox"
+            android:text="Check Box"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/checkbox"
+            android:textSize="20dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/radio"
+            android:text="Radiobutton"
+            android:gravity="center"
+
+            android:id="@+id/radio"
+            android:layout_weight="1"
+            android:textSize="20dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/dropdown"
+            android:text="Dropdown"
+            android:gravity="center"
+
+            android:layout_weight="1"
+            android:id="@+id/dropdown"
+            android:textSize="20dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/rating"
+            android:text="Ranking"
+            android:gravity="center"
+
+            android:id="@+id/Rankings"
+            android:layout_weight="1"
+            android:textSize="20dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/emoji"
+            android:text="Emoji"
+            android:gravity="center"
+
+            android:layout_weight="1"
+            android:id="@+id/emoji"
+            android:textSize="20dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/array"
+            android:text="NPS"
+            android:gravity="center"
+
+            android:layout_weight="1"
+            android:id="@+id/nps"
+            android:textSize="20dp"/>
+
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/array"
+            android:text="Array"
+            android:gravity="center"
+
+            android:layout_weight="1"
+            android:id="@+id/array"
+            android:textSize="20dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/textbox"
+            android:gravity="center"
+            android:text="Textbox"
+            android:id="@+id/textbox"
+            android:layout_weight="1"
+            android:textSize="20dp"/>
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:weightSum="2">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/vers"
+                android:gravity="end"
+                android:id="@+id/versus"
+                android:textSize="20dp"/>
+
+             <Spinner
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="end"
+                 android:id="@+id/spinnerb"/>
+
+
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/textbox"
+                android:gravity="end"
+                android:id="@+id/slider"
+                android:textSize="20dp"/>
+
+            <Spinner
+                android:id="@+id/spinnera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+              ></Spinner>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

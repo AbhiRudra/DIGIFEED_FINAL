@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:id="@+id/linearcontainerradio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/question_back"
+            android:id="@+id/radio_edittext"
+            android:padding="5dp"
+            android:hint="Enter Question Here" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select your answer:"
+            android:layout_marginTop="10dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+
+
+                <Button
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/saddest"
+                    android:enabled="false"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/saddest"/>
+
+                <Button
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/sad"
+                    android:enabled="false"
+                    android:background="@drawable/sad"/>
+
+
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/neutral"
+                android:enabled="false"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/neutral"/>
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/happy"
+                android:enabled="false"
+                android:background="@drawable/happy"/>
+
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/happiest"
+                android:enabled="false"
+                android:background="@drawable/happiest"/>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="submit"
+            android:background="@drawable/button_backgraound"
+            android:id="@+id/radio_submit"
+            android:textColor="@color/colorWhite"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:layout_gravity="center|bottom">
+
+        </Button>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

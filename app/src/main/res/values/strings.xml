@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">DIGIFEED_FINAL</string>
+
+    <array name="Options">
+        <item>Slider</item>
+        <item>Star Rating</item>
+        <item>Emoji</item>
+
+    </array>
+
+    <array name="Optionsa">
+        <item>Versus</item>
+        <item>Text</item>
+        <item>Logo</item>
+
+    </array>
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
