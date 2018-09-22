@@ -1,4 +1,4 @@
-package digifeed.com.digifeed_final;
+package Create_Survey;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -16,9 +16,14 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class check_list_frag extends Fragment {
+import Create_Survey.icomm;
+import Create_Survey.survey_creator;
+import digifeed.com.digifeed_final.R;
 
-    public check_list_frag() {
+public class rank_list_frag extends Fragment {
+
+    public rank_list_frag() {
+
 
     }
 
@@ -30,7 +35,7 @@ public class check_list_frag extends Fragment {
     ArrayList<String> tempq=new ArrayList<>();
     ArrayList<String> tempcont;
     Button remove;
-    icomm icomm;
+    Create_Survey.icomm icomm;
     Button submit;
 
     public void setTypeee(int typeee) {
@@ -82,7 +87,7 @@ public class check_list_frag extends Fragment {
                     try {
                         survey_creator survey_creator = new survey_creator();
                         // Log.d("naesss", "onClick: "+survey_creator.spkey);
-                    }catch (Exception e){
+                            }catch (Exception e){
                         e.printStackTrace();
                     }
                     android.app.FragmentManager fragmentManager=getFragmentManager();
@@ -140,7 +145,7 @@ public class check_list_frag extends Fragment {
     public void addradioview(){
         LayoutInflater inflater = (LayoutInflater) Objects.requireNonNull(getActivity()).getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (inflater!=null){
-            currentview=inflater.inflate(R.layout.add_check,null);
+            currentview=inflater.inflate(R.layout.add_ranks,null);
             linearLayout.addView(currentview);
             ViewStored.add(currentview);
 

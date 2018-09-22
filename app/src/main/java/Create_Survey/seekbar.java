@@ -1,4 +1,4 @@
-package digifeed.com.digifeed_final;
+package Create_Survey;
 
 
 import android.app.Fragment;
@@ -17,6 +17,9 @@ import android.widget.SeekBar;
 
 import java.util.ArrayList;
 
+import Create_Survey.icomm;
+import digifeed.com.digifeed_final.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,7 +34,7 @@ public class seekbar extends Fragment {
     ArrayList<String> tempq=new ArrayList<>();
     ArrayList<String> tempcont;
     Button remove;
-    icomm icomm;
+    Create_Survey.icomm icomm;
     Button submit;
 
 

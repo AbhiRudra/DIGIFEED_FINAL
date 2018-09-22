@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".seekbar"
+    tools:context="Create_Survey.seekbar"
     android:id="@+id/linearcontainerradio"
     android:orientation="vertical"
     android:padding="16dp"

@@ -1,13 +1,11 @@
-package digifeed.com.digifeed_final;
+package Create_Survey;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
@@ -16,12 +14,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import java.io.IOException;
 import java.util.ArrayList;
+
+import Create_Survey.icomm;
+import Create_Survey.survey_creator;
+import digifeed.com.digifeed_final.R;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -38,7 +37,7 @@ public class versus_logo_frag extends Fragment
     View ret;
     ArrayList<String> tempq=new ArrayList<>();
     ArrayList<String> tempcont;
-    icomm icomm;
+    Create_Survey.icomm icomm;
     Button submit;
     String[] uri1,uri2;
     Button b1,b2;

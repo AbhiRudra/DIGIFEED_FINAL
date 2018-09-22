@@ -1,4 +1,4 @@
-package digifeed.com.digifeed_final;
+package Create_Survey;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -16,10 +16,13 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class rank_list_frag extends Fragment {
+import Create_Survey.icomm;
+import Create_Survey.survey_creator;
+import digifeed.com.digifeed_final.R;
 
-    public rank_list_frag() {
+public class array_questions extends Fragment {
 
+    public array_questions() {
 
     }
 
@@ -27,11 +30,12 @@ public class rank_list_frag extends Fragment {
     ArrayList<View> ViewStored=new ArrayList<>();
     LinearLayout linearLayout;
     View ret;
-    Button addbutton;
+    Button addbutton,removebutton;
+    Button addoption,removeoption;
     ArrayList<String> tempq=new ArrayList<>();
     ArrayList<String> tempcont;
     Button remove;
-    icomm icomm;
+    Create_Survey.icomm icomm;
     Button submit;
 
     public void setTypeee(int typeee) {
@@ -44,9 +48,14 @@ public class rank_list_frag extends Fragment {
                              final Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        ret= inflater.inflate(R.layout.fragment_radio_list_frag, container, false);
+        ret= inflater.inflate(R.layout.fragment_array_questions, container, false);
         linearLayout=ret.findViewById(R.id.linearcontainerradio);
-        addbutton=ret.findViewById(R.id.radio_create);
+        addbutton=ret.findViewById(R.id.sub_create);
+        removebutton=ret.findViewById(R.id.sub_remove);
+        addoption=ret.findViewById(R.id.op_create);
+        removeoption=ret.findViewById(R.id.op_remove);
+
+
         icomm=(icomm)getActivity();
         Log.d("tpeee", "onCreateView: "+typeee);
 
@@ -58,9 +67,25 @@ public class rank_list_frag extends Fragment {
                 addradioview2();
             }
         });
-        remove=ret.findViewById(R.id.radio_remove);
+
+        addoption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addradioview3();
+            }
+        });
+
+
+
         submit=ret.findViewById(R.id.radio_submit);
-        remove.setOnClickListener(new View.OnClickListener() {
+        removebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                delete();
+            }
+        });
+
+        removeoption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 delete();
@@ -83,7 +108,8 @@ public class rank_list_frag extends Fragment {
                     try {
                         survey_creator survey_creator = new survey_creator();
                         // Log.d("naesss", "onClick: "+survey_creator.spkey);
-                            }catch (Exception e){
+
+                    }catch (Exception e){
                         e.printStackTrace();
                     }
                     android.app.FragmentManager fragmentManager=getFragmentManager();
@@ -102,6 +128,53 @@ public class rank_list_frag extends Fragment {
 
 
         return ret;
+
+    }
+
+    private void addradioview3() {
+
+        EditText editText=null;
+        try{
+
+            if (!ViewStored.isEmpty()){
+                editText=ViewStored.get(ViewStored.size()-1).findViewById(R.id.inf_ed);
+
+                Log.d("tempq", "addradioview2: "+tempq);
+            }else {
+                addradioview();
+                Log.d("added", "addradioview2: "+tempq);
+                Log.d("sizeofview", "delete: "+ViewStored.size());
+
+            }
+
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+        if (editText!=null&&!TextUtils.isEmpty(editText.getText().toString())){
+
+
+            tempq.add(editText.getText().toString());
+            Log.d("tempqqq", "addradioview2: "+tempq);
+            addradioview4();
+        }
+
+    }
+
+    private void addradioview4() {
+
+
+        LayoutInflater inflater = (LayoutInflater) Objects.requireNonNull(getActivity()).getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        if (inflater!=null){
+            currentview=inflater.inflate(R.layout.add_list,null);
+            linearLayout.addView(currentview);
+            ViewStored.add(currentview);
+        }
+
+
 
     }
 
@@ -141,14 +214,10 @@ public class rank_list_frag extends Fragment {
     public void addradioview(){
         LayoutInflater inflater = (LayoutInflater) Objects.requireNonNull(getActivity()).getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (inflater!=null){
-            currentview=inflater.inflate(R.layout.add_ranks,null);
+            currentview=inflater.inflate(R.layout.add_sub_question,null);
             linearLayout.addView(currentview);
             ViewStored.add(currentview);
-
-
-
-
-        }
+            }
 
 
     }

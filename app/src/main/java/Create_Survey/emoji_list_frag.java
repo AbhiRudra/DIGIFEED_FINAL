@@ -1,9 +1,7 @@
-package digifeed.com.digifeed_final;
+package Create_Survey;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -15,7 +13,10 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
-import java.util.Objects;
+
+import Create_Survey.icomm;
+import Create_Survey.survey_creator;
+import digifeed.com.digifeed_final.R;
 
 public class emoji_list_frag extends Fragment {
 
@@ -31,7 +32,7 @@ public class emoji_list_frag extends Fragment {
     ArrayList<String> tempq=new ArrayList<>();
     ArrayList<String> tempcont;
     Button remove;
-    icomm icomm;
+    Create_Survey.icomm icomm;
     Button submit;
 
     public void setTypeee(int typeee) {

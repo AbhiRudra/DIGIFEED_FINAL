@@ -1,4 +1,4 @@
-package digifeed.com.digifeed_final;
+package Create_Survey;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -14,11 +14,16 @@ import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
-public class text_list_frag extends Fragment
-{
-    public text_list_frag() {
+import Create_Survey.icomm;
+import Create_Survey.survey_creator;
+import digifeed.com.digifeed_final.R;
+
+public class nps_frag extends Fragment {
+
+    public nps_frag() {
 
     }
+
 
     View currentview;
     ArrayList<View> ViewStored=new ArrayList<>();
@@ -28,7 +33,7 @@ public class text_list_frag extends Fragment
     ArrayList<String> tempq=new ArrayList<>();
     ArrayList<String> tempcont;
     Button remove;
-    icomm icomm;
+    Create_Survey.icomm icomm;
     Button submit;
 
     public void setTypeee(int typeee) {
@@ -41,7 +46,7 @@ public class text_list_frag extends Fragment
                              final Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        ret= inflater.inflate(R.layout.fragment_text, container, false);
+        ret= inflater.inflate(R.layout.fragment_nps, container, false);
         linearLayout=ret.findViewById(R.id.linearcontainerradio);
         icomm=(icomm)getActivity();
         Log.d("tpeee", "onCreateView: "+typeee);
@@ -62,7 +67,7 @@ public class text_list_frag extends Fragment
                     try {
                         survey_creator survey_creator = new survey_creator();
                         // Log.d("naesss", "onClick: "+survey_creator.spkey);
-                             }catch (Exception e){
+                               }catch (Exception e){
                         e.printStackTrace();
                     }
                     android.app.FragmentManager fragmentManager=getFragmentManager();
