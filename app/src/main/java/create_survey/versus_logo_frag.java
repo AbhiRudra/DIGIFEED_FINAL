@@ -1,4 +1,4 @@
-package Create_Survey;
+package create_survey;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -18,8 +18,6 @@ import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
-import Create_Survey.icomm;
-import Create_Survey.survey_creator;
 import digifeed.com.digifeed_final.R;
 
 import static android.app.Activity.RESULT_OK;
@@ -37,11 +35,12 @@ public class versus_logo_frag extends Fragment
     View ret;
     ArrayList<String> tempq=new ArrayList<>();
     ArrayList<String> tempcont;
-    Create_Survey.icomm icomm;
+    methods_interface methods_interface;
     Button submit;
     String[] uri1,uri2;
     Button b1,b2;
     Uri ur,ur1;
+    int type;
     private static int RESULT_LOAD_IMAGE = 1;
     private static int RESULT_LOAD_IMAGE2 = 2;
 
@@ -58,12 +57,12 @@ public class versus_logo_frag extends Fragment
         // Inflate the layout for this fragment
 
 
-
         ret= inflater.inflate(R.layout.versus_logo, container, false);
         linearLayout=ret.findViewById(R.id.linearcontainerradio);
-        icomm=(icomm)getActivity();
+        methods_interface =(methods_interface)getActivity();
         Log.d("tpeee", "onCreateView: "+typeee);
 
+        typeee=9;
 
         submit=ret.findViewById(R.id.seek_submit);
 
@@ -101,7 +100,7 @@ public class versus_logo_frag extends Fragment
 
                 if (!TextUtils.isEmpty(editText1.getText().toString()) ){
 
-                    icomm.versuslogo(editText1.getText().toString(),ur,ur1);
+                    methods_interface.versuslogo(typeee,editText1.getText().toString(),ur,ur1);
                     try {
                         survey_creator survey_creator = new survey_creator();
                         // Log.d("naesss", "onClick: "+survey_creator.spkey);
@@ -137,6 +136,8 @@ public class versus_logo_frag extends Fragment
             Uri selectedImage = data.getData();
             String[] filePathColumn = { MediaStore.Images.Media.DATA };
             ur=selectedImage;
+
+
 
         }
 

@@ -1,4 +1,4 @@
-package Create_Survey;
+package create_survey;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -14,13 +14,11 @@ import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
-import Create_Survey.icomm;
-import Create_Survey.survey_creator;
 import digifeed.com.digifeed_final.R;
 
-public class normal_slider_frag extends Fragment {
+public class versus_text extends Fragment {
 
-    public normal_slider_frag() {
+    public versus_text() {
 
     }
 
@@ -32,7 +30,7 @@ public class normal_slider_frag extends Fragment {
     ArrayList<String> tempq=new ArrayList<>();
     ArrayList<String> tempcont;
     Button remove;
-    Create_Survey.icomm icomm;
+    methods_interface methods_interface;
     Button submit;
 
     public void setTypeee(int typeee) {
@@ -45,13 +43,15 @@ public class normal_slider_frag extends Fragment {
                              final Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        ret= inflater.inflate(R.layout.fragment_seekbar, container, false);
+        ret= inflater.inflate(R.layout.fragment_versus_text, container, false);
         linearLayout=ret.findViewById(R.id.linearcontainerradio);
-        icomm=(icomm)getActivity();
+        methods_interface =(methods_interface)getActivity();
         Log.d("tpeee", "onCreateView: "+typeee);
 
 
-        submit=ret.findViewById(R.id.seek_submit);
+        submit=ret.findViewById(R.id.radio_submit);
+
+        typeee=10;
 
 
 
@@ -60,9 +60,12 @@ public class normal_slider_frag extends Fragment {
             public void onClick(View v) {
 
                 EditText editText1=ret.findViewById(R.id.radio_edittext);
-                if (!TextUtils.isEmpty(editText1.getText().toString())){
+                EditText edittext2=ret.findViewById(R.id.option1_edittext);
+                EditText edittext3=ret.findViewById(R.id.option2_edittext);
 
-                    icomm.Question(editText1.getText().toString());
+                if (!TextUtils.isEmpty(editText1.getText().toString()) && !TextUtils.isEmpty(edittext2.getText().toString()) && !TextUtils.isEmpty(edittext3.getText().toString())){
+
+                    methods_interface.versusText(typeee,editText1.getText().toString(),edittext2.getText().toString(),edittext3.getText().toString());
                     try {
                         survey_creator survey_creator = new survey_creator();
                         // Log.d("naesss", "onClick: "+survey_creator.spkey);
@@ -89,5 +92,7 @@ public class normal_slider_frag extends Fragment {
         return ret;
 
     }
+
+
 
 }

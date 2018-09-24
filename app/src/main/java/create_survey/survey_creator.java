@@ -1,4 +1,4 @@
-package Create_Survey;
+package create_survey;
 
 import android.app.Dialog;
 import android.app.Fragment;
@@ -33,7 +33,7 @@ import java.util.Objects;
 
 import digifeed.com.digifeed_final.R;
 
-public class survey_creator extends AppCompatActivity implements icomm {
+public class survey_creator extends AppCompatActivity implements methods_interface {
 
 
 
@@ -159,7 +159,7 @@ public class survey_creator extends AppCompatActivity implements icomm {
 
 
         final radio_list_frag radio_list_frag = new radio_list_frag();
-        final seekbar seekbar= new seekbar();
+        final Emoji_slider Emoji_slider = new Emoji_slider();
         final array_questions array_questions= new array_questions();
         final normal_slider_frag normal_slider_frag=new normal_slider_frag();
         final check_list_frag check_list_frag=new check_list_frag();
@@ -168,7 +168,7 @@ public class survey_creator extends AppCompatActivity implements icomm {
         final emoji_list_frag emoji_list_frag=new emoji_list_frag();
         final text_list_frag text_list_frag= new text_list_frag();
         final versus_text versus_text= new versus_text();
-        final stra_rating_frag stra_rating_frag=new stra_rating_frag();
+        final star_rating_frag star_rating_frag =new star_rating_frag();
         final nps_frag nps_frag=new nps_frag();
         final versus_logo_frag versus_logo_frag=new versus_logo_frag();
 
@@ -237,12 +237,12 @@ public class survey_creator extends AppCompatActivity implements icomm {
 
                 }
                 else if(selectedItemText.equalsIgnoreCase("Emoji")){
-                    fragmentListTrans(seekbar);
+                    fragmentListTrans(Emoji_slider);
                     pop.dismiss();
 
                 }
                 else if(selectedItemText.equalsIgnoreCase("Star Rating")){
-                    fragmentListTrans(stra_rating_frag);
+                    fragmentListTrans(star_rating_frag);
                     pop.dismiss();
 
                 }
@@ -388,37 +388,6 @@ public class survey_creator extends AppCompatActivity implements icomm {
 
     }
 
-    @Override
-    public void Question(String Question) {
-
-    }
-
-    @Override
-    public void radio_list_choices(ArrayList<String> choices, String q) {
-
-    }
-
-    @Override
-    public void arraydata(String questions, ArrayList<String> subQuestions) {
-
-    }
-
-    @Override
-    public void versusdata(String question, String optiona, String optionb) {
-
-    }
-
-    @Override
-    public void versuslogo(String question, Uri uri1, Uri uri2) {
-
-    }
-
-
-
-    @Override
-    public void pipingdata(String question, ArrayList<String> subquestions, String sub, String sub1, int type, int qno) {
-
-    }
 
 
     public  void delete (){
@@ -438,6 +407,40 @@ public class survey_creator extends AppCompatActivity implements icomm {
     public void removequestion(View view) {
 
         addquestions.removeView((View) view.getParent());
+
+    }
+
+
+
+
+
+    @Override
+    public void TextQuestion(int type, String Question) {
+
+    }
+
+    @Override
+    public void option_questions(int type, String Question, ArrayList<String> choices) {
+
+    }
+
+    @Override
+    public void array_question(int type, String Question, ArrayList<String> subquestions, ArrayList<String> suboptions) {
+
+    }
+
+    @Override
+    public void versusText(int type, String question, String optiona, String optionb) {
+
+    }
+
+    @Override
+    public void versuslogo(int type, String question, Uri uri1, Uri uri2) {
+
+    }
+
+    @Override
+    public void pipingdata(String question, ArrayList<String> subquestions, String sub, String sub1, int type, int qno) {
 
     }
 }

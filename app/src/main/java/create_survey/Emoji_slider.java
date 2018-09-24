@@ -1,4 +1,4 @@
-package Create_Survey;
+package create_survey;
 
 
 import android.app.Fragment;
@@ -17,14 +17,13 @@ import android.widget.SeekBar;
 
 import java.util.ArrayList;
 
-import Create_Survey.icomm;
 import digifeed.com.digifeed_final.R;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class seekbar extends Fragment {
+public class Emoji_slider extends Fragment {
 
     View currentview;
     ArrayList<View> ViewStored=new ArrayList<>();
@@ -34,11 +33,12 @@ public class seekbar extends Fragment {
     ArrayList<String> tempq=new ArrayList<>();
     ArrayList<String> tempcont;
     Button remove;
-    Create_Survey.icomm icomm;
+    methods_interface methods_interface;
     Button submit;
+    int typee;
 
 
-    public seekbar() {
+    public Emoji_slider() {
         // Required empty public constructor
     }
 
@@ -61,6 +61,8 @@ linearLayout=ret.findViewById(R.id.linearcontainerradio);
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 Log.d("progress", "onProgressChanged: "+progress);
                 Drawable drawable=null;
+
+
 
 switch (progress){
     case 0:{
@@ -88,6 +90,7 @@ switch (progress){
         seekBar.setThumb(drawable);
         break;
     }
+
 }
 
             }
@@ -102,13 +105,16 @@ switch (progress){
 
             }
         });
-icomm=(icomm) getActivity();
+
+        typee=12;
+
+methods_interface =(methods_interface) getActivity();
 submit.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
 
         if(!TextUtils.isEmpty(editText.getText().toString())){
-          icomm.Question(editText.getText().toString());
+          methods_interface.TextQuestion(typee,editText.getText().toString());
 
             android.app.FragmentManager fragmentManager=getFragmentManager();
             Fragment fragment=fragmentManager.findFragmentById(R.id.linearcontainer);

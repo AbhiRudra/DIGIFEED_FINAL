@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="Create_Survey.seekbar"
+    tools:context="create_survey.Emoji_slider"
     android:id="@+id/linearcontainerradio"
     android:orientation="vertical"
     android:padding="16dp"

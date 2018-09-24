@@ -1,4 +1,4 @@
-package Create_Survey;
+package create_survey;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -16,13 +16,11 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import Create_Survey.icomm;
-import Create_Survey.survey_creator;
 import digifeed.com.digifeed_final.R;
 
-public class array_questions extends Fragment {
+public class check_list_frag extends Fragment {
 
-    public array_questions() {
+    public check_list_frag() {
 
     }
 
@@ -30,12 +28,11 @@ public class array_questions extends Fragment {
     ArrayList<View> ViewStored=new ArrayList<>();
     LinearLayout linearLayout;
     View ret;
-    Button addbutton,removebutton;
-    Button addoption,removeoption;
+    Button addbutton;
     ArrayList<String> tempq=new ArrayList<>();
     ArrayList<String> tempcont;
     Button remove;
-    Create_Survey.icomm icomm;
+    methods_interface methods_interface;
     Button submit;
 
     public void setTypeee(int typeee) {
@@ -48,15 +45,10 @@ public class array_questions extends Fragment {
                              final Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        ret= inflater.inflate(R.layout.fragment_array_questions, container, false);
+        ret= inflater.inflate(R.layout.fragment_radio_list_frag, container, false);
         linearLayout=ret.findViewById(R.id.linearcontainerradio);
-        addbutton=ret.findViewById(R.id.sub_create);
-        removebutton=ret.findViewById(R.id.sub_remove);
-        addoption=ret.findViewById(R.id.op_create);
-        removeoption=ret.findViewById(R.id.op_remove);
-
-
-        icomm=(icomm)getActivity();
+        addbutton=ret.findViewById(R.id.radio_create);
+        methods_interface =(methods_interface)getActivity();
         Log.d("tpeee", "onCreateView: "+typeee);
 
 
@@ -67,31 +59,16 @@ public class array_questions extends Fragment {
                 addradioview2();
             }
         });
-
-        addoption.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addradioview3();
-            }
-        });
-
-
-
+        remove=ret.findViewById(R.id.radio_remove);
         submit=ret.findViewById(R.id.radio_submit);
-        removebutton.setOnClickListener(new View.OnClickListener() {
+        remove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 delete();
             }
         });
 
-        removeoption.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                delete();
-            }
-        });
-
+        typeee=1;
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,12 +80,11 @@ public class array_questions extends Fragment {
 
                 if (!TextUtils.isEmpty(editText1.getText().toString())){
 
-//            icomm.radio_list_question(editText1.getText().toString());
-                    icomm.radio_list_choices(tempq,editText1.getText().toString());
+//            methods_interface.radio_list_question(editText1.getText().toString());
+                    methods_interface.option_questions(typeee,editText1.getText().toString(),tempq);
                     try {
                         survey_creator survey_creator = new survey_creator();
                         // Log.d("naesss", "onClick: "+survey_creator.spkey);
-
                     }catch (Exception e){
                         e.printStackTrace();
                     }
@@ -128,53 +104,6 @@ public class array_questions extends Fragment {
 
 
         return ret;
-
-    }
-
-    private void addradioview3() {
-
-        EditText editText=null;
-        try{
-
-            if (!ViewStored.isEmpty()){
-                editText=ViewStored.get(ViewStored.size()-1).findViewById(R.id.inf_ed);
-
-                Log.d("tempq", "addradioview2: "+tempq);
-            }else {
-                addradioview();
-                Log.d("added", "addradioview2: "+tempq);
-                Log.d("sizeofview", "delete: "+ViewStored.size());
-
-            }
-
-
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-
-        if (editText!=null&&!TextUtils.isEmpty(editText.getText().toString())){
-
-
-            tempq.add(editText.getText().toString());
-            Log.d("tempqqq", "addradioview2: "+tempq);
-            addradioview4();
-        }
-
-    }
-
-    private void addradioview4() {
-
-
-        LayoutInflater inflater = (LayoutInflater) Objects.requireNonNull(getActivity()).getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        if (inflater!=null){
-            currentview=inflater.inflate(R.layout.add_list,null);
-            linearLayout.addView(currentview);
-            ViewStored.add(currentview);
-        }
-
-
 
     }
 
@@ -214,10 +143,14 @@ public class array_questions extends Fragment {
     public void addradioview(){
         LayoutInflater inflater = (LayoutInflater) Objects.requireNonNull(getActivity()).getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (inflater!=null){
-            currentview=inflater.inflate(R.layout.add_sub_question,null);
+            currentview=inflater.inflate(R.layout.add_check,null);
             linearLayout.addView(currentview);
             ViewStored.add(currentview);
-            }
+
+
+
+
+        }
 
 
     }

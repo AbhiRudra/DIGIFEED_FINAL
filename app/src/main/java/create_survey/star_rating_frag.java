@@ -1,4 +1,4 @@
-package Create_Survey;
+package create_survey;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -14,16 +14,13 @@ import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
-import Create_Survey.icomm;
-import Create_Survey.survey_creator;
 import digifeed.com.digifeed_final.R;
 
-public class nps_frag extends Fragment {
+public class star_rating_frag extends Fragment {
 
-    public nps_frag() {
+    public star_rating_frag() {
 
     }
-
 
     View currentview;
     ArrayList<View> ViewStored=new ArrayList<>();
@@ -33,7 +30,7 @@ public class nps_frag extends Fragment {
     ArrayList<String> tempq=new ArrayList<>();
     ArrayList<String> tempcont;
     Button remove;
-    Create_Survey.icomm icomm;
+    methods_interface methods_interface;
     Button submit;
 
     public void setTypeee(int typeee) {
@@ -46,28 +43,27 @@ public class nps_frag extends Fragment {
                              final Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        ret= inflater.inflate(R.layout.fragment_nps, container, false);
+        ret= inflater.inflate(R.layout.star_rating, container, false);
         linearLayout=ret.findViewById(R.id.linearcontainerradio);
-        icomm=(icomm)getActivity();
+        methods_interface =(methods_interface)getActivity();
         Log.d("tpeee", "onCreateView: "+typeee);
 
 
-        submit=ret.findViewById(R.id.radio_submit);
+        typeee=13;
+        submit=ret.findViewById(R.id.array_submit);
 
 
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 EditText editText1=ret.findViewById(R.id.radio_edittext);
                 if (!TextUtils.isEmpty(editText1.getText().toString())){
 
-                    icomm.Question(editText1.getText().toString());
+                    methods_interface.TextQuestion(typeee,editText1.getText().toString());
                     try {
                         survey_creator survey_creator = new survey_creator();
-                        // Log.d("naesss", "onClick: "+survey_creator.spkey);
-                               }catch (Exception e){
+                                 }catch (Exception e){
                         e.printStackTrace();
                     }
                     android.app.FragmentManager fragmentManager=getFragmentManager();
@@ -90,6 +86,5 @@ public class nps_frag extends Fragment {
         return ret;
 
     }
-
 
 }

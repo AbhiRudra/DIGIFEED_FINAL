@@ -1,4 +1,4 @@
-package Create_Survey;
+package create_survey;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -14,15 +14,14 @@ import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
-import Create_Survey.icomm;
-import Create_Survey.survey_creator;
 import digifeed.com.digifeed_final.R;
 
-public class stra_rating_frag extends Fragment {
+public class nps_frag extends Fragment {
 
-    public stra_rating_frag() {
+    public nps_frag() {
 
     }
+
 
     View currentview;
     ArrayList<View> ViewStored=new ArrayList<>();
@@ -32,7 +31,7 @@ public class stra_rating_frag extends Fragment {
     ArrayList<String> tempq=new ArrayList<>();
     ArrayList<String> tempcont;
     Button remove;
-    Create_Survey.icomm icomm;
+    methods_interface methods_interface;
     Button submit;
 
     public void setTypeee(int typeee) {
@@ -45,26 +44,30 @@ public class stra_rating_frag extends Fragment {
                              final Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        ret= inflater.inflate(R.layout.star_rating, container, false);
+        ret= inflater.inflate(R.layout.fragment_nps, container, false);
         linearLayout=ret.findViewById(R.id.linearcontainerradio);
-        icomm=(icomm)getActivity();
+        methods_interface =(methods_interface)getActivity();
         Log.d("tpeee", "onCreateView: "+typeee);
 
 
-        submit=ret.findViewById(R.id.array_submit);
+        submit=ret.findViewById(R.id.radio_submit);
+
+        typeee=6;
 
 
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 EditText editText1=ret.findViewById(R.id.radio_edittext);
                 if (!TextUtils.isEmpty(editText1.getText().toString())){
 
-                    icomm.Question(editText1.getText().toString());
+                    methods_interface.TextQuestion(typeee,editText1.getText().toString());
                     try {
                         survey_creator survey_creator = new survey_creator();
-                                 }catch (Exception e){
+                        // Log.d("naesss", "onClick: "+survey_creator.spkey);
+                               }catch (Exception e){
                         e.printStackTrace();
                     }
                     android.app.FragmentManager fragmentManager=getFragmentManager();
@@ -87,5 +90,6 @@ public class stra_rating_frag extends Fragment {
         return ret;
 
     }
+
 
 }

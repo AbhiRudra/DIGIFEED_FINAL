@@ -1,4 +1,4 @@
-package Create_Survey;
+package create_survey;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -16,13 +16,11 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import Create_Survey.icomm;
-import Create_Survey.survey_creator;
 import digifeed.com.digifeed_final.R;
 
-public class rank_list_frag extends Fragment {
+public class drop_list_frag extends Fragment {
 
-    public rank_list_frag() {
+    public drop_list_frag() {
 
 
     }
@@ -35,7 +33,7 @@ public class rank_list_frag extends Fragment {
     ArrayList<String> tempq=new ArrayList<>();
     ArrayList<String> tempcont;
     Button remove;
-    Create_Survey.icomm icomm;
+    methods_interface methods_interface;
     Button submit;
 
     public void setTypeee(int typeee) {
@@ -51,7 +49,7 @@ public class rank_list_frag extends Fragment {
         ret= inflater.inflate(R.layout.fragment_radio_list_frag, container, false);
         linearLayout=ret.findViewById(R.id.linearcontainerradio);
         addbutton=ret.findViewById(R.id.radio_create);
-        icomm=(icomm)getActivity();
+        methods_interface =(methods_interface)getActivity();
         Log.d("tpeee", "onCreateView: "+typeee);
 
 
@@ -71,6 +69,8 @@ public class rank_list_frag extends Fragment {
             }
         });
 
+        typeee=3;
+
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,12 +82,13 @@ public class rank_list_frag extends Fragment {
 
                 if (!TextUtils.isEmpty(editText1.getText().toString())){
 
-//            icomm.radio_list_question(editText1.getText().toString());
-                    icomm.radio_list_choices(tempq,editText1.getText().toString());
+//            methods_interface.radio_list_question(editText1.getText().toString());
+                    methods_interface.option_questions(typeee,editText1.getText().toString(),tempq);
                     try {
                         survey_creator survey_creator = new survey_creator();
                         // Log.d("naesss", "onClick: "+survey_creator.spkey);
-                            }catch (Exception e){
+
+                    }catch (Exception e){
                         e.printStackTrace();
                     }
                     android.app.FragmentManager fragmentManager=getFragmentManager();
@@ -145,7 +146,7 @@ public class rank_list_frag extends Fragment {
     public void addradioview(){
         LayoutInflater inflater = (LayoutInflater) Objects.requireNonNull(getActivity()).getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (inflater!=null){
-            currentview=inflater.inflate(R.layout.add_ranks,null);
+            currentview=inflater.inflate(R.layout.add_drop,null);
             linearLayout.addView(currentview);
             ViewStored.add(currentview);
 
